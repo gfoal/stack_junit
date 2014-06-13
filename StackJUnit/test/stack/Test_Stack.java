@@ -30,7 +30,20 @@ public class Test_Stack {
 	}
 
 	@Test
-	public void pop_pushTwoElements_lastElementDeleted() {
+	public void pop_pushTwoElements_returnsCorrectElement() {
+		// Testing pop() method
+		int stackSize = 3;
+		Integer checker = 10;
+		testStack = new Stack(stackSize);
+
+		testStack.push(5);
+		testStack.push(checker);
+		testStack.pop();
+		assertEquals(checker, testStack.pop());
+	}
+	
+	@Test
+	public void pop_pushTwoElements_deletesLastElement() {
 		// Testing pop() method
 		int stackSize = 3;
 		Integer checker = 10;

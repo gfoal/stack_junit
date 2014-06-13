@@ -6,9 +6,8 @@ public class Stack {
 	/**
 	 * Changes:
 	 * - works with all Objects (from Integer)
-	 * - now you can't create Stack instance without stackSize parameter
+	 * - changed constructor of Stack class so you need to set stack size manually
 	 * - 'size' variable renamed to 'position'
-	 * - pop() method now deletes last element and doesn't return anything
 	 * - peek() method now returns correct element (returned null)
 	 */
 
@@ -35,10 +34,12 @@ public class Stack {
 		}
 	}
 
-	public void pop() {
+	public Object pop() {
 		if (!isEmpty()) {
+			Object retEl = stack[position];
 			stack[position] = null;
 			position--;
+			return retEl;
 		} else {
 			throw new EmptyStackException();
 		}
